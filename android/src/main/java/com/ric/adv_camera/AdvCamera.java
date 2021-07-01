@@ -859,7 +859,7 @@ public class AdvCamera implements MethodChannel.MethodCallHandler,
             File file = new File(folder.getAbsolutePath(), fileNamePrefix + "_" + dateFormat.format(currentTime) + ".jpg");
             try {
                 output = new FileOutputStream(file);
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, output);
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 80, output);
                 output.flush();
                 output.close();
                 path = file.getAbsolutePath();

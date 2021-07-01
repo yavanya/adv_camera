@@ -549,7 +549,7 @@ public class AdvCameraView : NSObject, FlutterPlatformView {
         autoreleasepool {
             let rotatedImage = rotateImage(image: image)!
             let newImage = resizeImage(image: rotatedImage)!
-            guard let data = newImage.jpegData(compressionQuality: 1) ?? newImage.pngData() else {
+            guard let data = newImage.jpegData(compressionQuality: 0.8) ?? newImage.pngData() else {
                 return false
             }
             guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
